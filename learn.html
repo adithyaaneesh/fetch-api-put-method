@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>post</title>
+  </head>
+  <body>
+    <script>
+      const addProduct = () => {
+        const nameInput = document.getElementById("name").value;
+        const priceInput = document.getElementById("price").value;
+        const desInput = document.getElementById("des").value;
+        const categoryInput = document.getElementById("category").value;
+        
+
+        fetch("https://fakestoreapi.com/products", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: nameInput,
+            price: priceInput,
+            description: desInput,
+            category: categoryInput,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => alert(data))
+          .catch((error) => {
+            alert("Sorryy, failed to load", error);
+          });
+      };
+    </script>
+    <div>
+      <input id="name" type="text" placeholder="name" />
+      <input id="price" type="number" placeholder="price" />
+      <input id="des" type="text" placeholder="description" />
+      <input id="category" type="text" name="category" placeholder="category" />
+      <button type="submit" onclick="addProduct()">Add product</button>
+    </div>
+  </body>
+</html>

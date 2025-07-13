@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const updateProduct = () => {
+      const priceInput = document.getElementById("price").value;
+      fetch("https://fakestoreapi.com/products/1", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          price: priceInput,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => alert(data))
+        .catch((error) => {
+          alert("Sorryy, failed to load", error);
+        });
+    };
+  </script>
+  <div>
+    <input id="price" type="number" placeholder="price" />
+    <button type="submit" onclick="updateProduct()">Update product</button>
+  </div>
+</body>
+</html>
