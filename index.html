@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>put</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="person-list">
+      <div id="cardContainer" class="container"></div>
+    </section>
+  </body>
+  <script>
+    const data = [
+        {name:'adithya',age:21},
+        {name:'musina',age:20},
+        {name:'raniya',age:20},
+        {name:'naila',age:20}
+    ];
+
+    const cardContainer = document.getElementById('cardContainer')
+
+    let personList = ''
+
+    data.map((item)=> {
+        personList = personList + `<div class="card">
+                                    <h3>${item.name}</h3>
+                                    <p>${item.age}</p>
+                                </div>`
+
+    })
+    cardContainer.innerHTML = personList
+  </script>
+
+</html>
