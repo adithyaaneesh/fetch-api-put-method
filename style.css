@@ -1,0 +1,33 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding-top: 100px;
+    background-color: aliceblue;
+    min-height: 100vh;
+}
+
+#cardContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid;
+    padding: 15px;
+    background-color:rgba(115, 115, 253, 0.932) ;
+}
+.card:hover{
+    color: rgb(188, 188, 237);
+}
